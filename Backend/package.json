@@ -2,23 +2,15 @@
   "name": "Backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Akash2304/json_server.git"
+    "start":"node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Akash2304/json_server/issues"
-  },
-  "homepage": "https://github.com/Akash2304/json_server#readme",
   "dependencies": {
-    "json-server": "^0.17.4"
+    "json-server": "^1.0.0-beta.1"
   }
 }
