@@ -1,0 +1,14 @@
+.textfirst {
+    width: 70%;
+    margin-left: 17%;
+  }
+  
+  .parent {
+    display: grid;
+    grid-template-areas: 
+      "c1 c2"
+      "c3 c4"
+      "c5 c6";
+  }
+
+  
