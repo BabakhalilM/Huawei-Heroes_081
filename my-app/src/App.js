@@ -1,8 +1,10 @@
 import React from 'react'
-import App2 from './App2'
+import Aboutpage from './Aboutpage'
 
 export const App = () => {
   return (
-    <App2/>
+    <div>
+       <Aboutpage/>
+    </div>
   )
 }
