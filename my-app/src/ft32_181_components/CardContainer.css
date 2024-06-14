@@ -4,6 +4,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin: 16px;
+    background-color: white;
   }
   
   .pagination {

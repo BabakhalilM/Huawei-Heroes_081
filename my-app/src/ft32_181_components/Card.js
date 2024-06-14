@@ -14,7 +14,7 @@ const Card = ({ data }) => {
       <div className="card-image">
         <img src={isHovered && data['image 2'] ? data['image 2'] : data.image} alt={data['full-unstyled-link']} />
       </div>
-      <h2>{data['full-unstyled-link']}</h2>
+      <h5>{data['full-unstyled-link']}</h5>
       <p>{data.badge}</p>
       <p>{data['rating-text']} {data['rating-count']}</p>
       <p>{data['price-item']}</p>
