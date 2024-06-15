@@ -9,7 +9,7 @@ const CardContainer = () => {
   const itemsPerPage = 12;
 
   useEffect(() => {
-    fetch('https://huawei-heroes-081-986o.onrender.com/Cards') // Replace with your API URL
+    fetch('https://huawei-heroes-081-986o.onrender.com/Cards') 
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));
