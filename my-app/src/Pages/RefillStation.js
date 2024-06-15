@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Dropdown2 from './ft30_067-Day2_componants/Dropdown2';
-import { SkinCareRefill } from './ft30_067-Day2_componants/SkinCareRefill';
-import { HandCareRefill } from './ft30_067-Day2_componants/HandCareRefill';
-import { BodyCareRefill } from './ft30_067-Day2_componants/BodyCareRefill';
-import { OralCareRefill } from './ft30_067-Day2_componants/OralCareRefill';
+import { SkinCareRefill } from '../ft30_067-Day2_componants/SkinCareRefill';
+import { HandCareRefill } from '../ft30_067-Day2_componants/HandCareRefill';
+import { BodyCareRefill } from '../ft30_067-Day2_componants/BodyCareRefill';
+import { OralCareRefill } from '../ft30_067-Day2_componants/OralCareRefill';
+import Dropdown2 from '../ft30_067-Day2_componants/Dropdown2';
 
 export const RefillStation = () => {
     return (

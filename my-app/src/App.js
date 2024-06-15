@@ -1,7 +1,8 @@
 import React from "react";
-import { RefillStation } from "./RefillStation";
-import { Sets } from "./Sets";
-import Aboutpage from "./Aboutpage";
+import Aboutpage from "./Pages/Aboutpage";
+import { RefillStation } from "./Pages/RefillStation";
+import { Sets } from "./Pages/Sets";
+import { Shop } from "./Pages/Shop";
 
 export const App = () => {
   return (
@@ -9,7 +10,8 @@ export const App = () => {
       <div style={{ display: "flex" }}>
         {/* <Aboutpage /> */}
         {/* <RefillStation /> */}
-        <Sets />
+        {/* <Sets /> */}
+        <Shop/>
       </div>
     </>
   );
