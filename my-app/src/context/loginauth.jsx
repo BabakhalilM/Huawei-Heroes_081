@@ -16,11 +16,11 @@ export const Authprovider = ({ children }) => {
 
   const [qshow, setQshow] = useState(false);
   const [formData, setFormData] = useState({
-    id:"",
     name:"",
     password: '',
     email:"",
-    fruit: ''
+    fruit: '',
+    cart:[]
   });
   const [data, setData] = useState([]);
 
