@@ -23,7 +23,7 @@ const ForgotPassword = () => {
     
         setLoading(true);
         try {
-          const response = await axios.get('https://huawei-heroes-081-1.onrender.com/data');
+          const response = await axios.get('https://huawei-heroes-081-2.onrender.com/data');
           setLoading(false);
     
           const users = response.data;
@@ -34,12 +34,10 @@ const ForgotPassword = () => {
           );
     
           if (user) {
-            // setUserpresent(true);
             setData(user.cart); 
             console.log('User found:', formData);
             console.log(data);
           } else {
-            // setUserpresent(false);
             alert("You don't have an account. Please sign up first.");
           }
         } catch (err) {

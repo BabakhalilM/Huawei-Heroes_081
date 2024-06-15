@@ -1,4 +1,5 @@
 
+import { Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -6,7 +7,7 @@ const Nav = () => {
       <>
       <p><Link to="/LoginForm">Login</Link></p>
       <Link to="/admin">
-        <button>Go to Admin Page</button>
+        <Button>Admin Page</Button>
       </Link>
       </>
     );

@@ -12,6 +12,7 @@ import { Route, Routes } from 'react-router';
 import AdminPage from './componets/AdminPage';
 import AddCardForm from './componets/AddCardForm';
 import EditCard from './componets/EditCard';
+import Cardshow from './userpanel/Cartshow';
 
 
 function App() {
@@ -19,22 +20,23 @@ function App() {
   return (
     // <Authprovider>
     <div>
-    <h1>Hello</h1>
+      <h1>Hello</h1>
       <div>
-        <Nav />
+        {/* <Nav /> */}
         <Routes>
-          <Route path='/' element={<Nav/>}/>
+          <Route path='/' element={<Nav />} />
           <Route path="/signupForm" element={<SignupForm />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/admin" element={<AdminPage />} />
-        <Route path="/add-card" element={<AddCardForm />} />
-        <Route path="/edit-card/:id" element={<EditCard />} />
+          <Route path="/add-card" element={<AddCardForm />} />
+          <Route path="/edit-card/:id" element={<EditCard />} />
         </Routes>
+        <Cardshow />
       </div>
-      </div>
-      // </Authprovider>
-    
+    </div>
+    // </Authprovider>
+
   )
 }
 

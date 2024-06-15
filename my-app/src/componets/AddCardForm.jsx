@@ -1,6 +1,7 @@
 // AddCardForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import './admin.css';
 import { useNavigate } from 'react-router-dom';
 
 const AddCardForm = () => {
@@ -33,7 +34,7 @@ const AddCardForm = () => {
     e.preventDefault();
     const newCard = { ...formData, id_: Date.now().toString() };
     try {
-      await axios.post('https://huawei-heroes-081-1.onrender.com/Cards', newCard);
+      await axios.post('https://huawei-heroes-081-2.onrender.com/Cards', newCard);
       navigate('/admin');
     } catch (error) {
       console.error('Error adding card:', error);
@@ -44,7 +45,10 @@ const AddCardForm = () => {
     <form onSubmit={handleSubmit}>
       <h2>Add New Card</h2>
       <input type="text" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" required />
-      {/* Add other fields similarly */}
+      <label htmlFor='productname'>Product Name</label>
+      <input type="text" id='productname'/>
+      <label htmlFor='price'>Price</label>
+      <input type="number" id="price" />
       <button type="submit">Add Card</button>
     </form>
   );

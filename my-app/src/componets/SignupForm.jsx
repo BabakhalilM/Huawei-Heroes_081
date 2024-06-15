@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { auth } from './firebase';
 import './signup.css';
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
@@ -62,7 +62,7 @@ const SignupForm = () => {
       console.log("new userdata ",newUserData);
       console.log(formData);
       try {
-        const response = await axios.post('https://huawei-heroes-081-1.onrender.com/data', formData);
+        const response = await axios.post('https://huawei-heroes-081-2.onrender.com/data', formData);
         console.log(response.data);
         console.log("data posted succesfully");
         setMessage('Sign up successful! A verification email has been sent. Please verify your email.');
@@ -75,6 +75,31 @@ const SignupForm = () => {
       setVerificationMessage('Email not verified yet. Please check your email and verify.');
     }
   };
+  
+  const dad = [{
+    "id": 2,
+    "name": "Test",
+    "passWord": "123",
+    "email": "asda",
+    "cart": []
+  }]
+    useEffect(() => {
+    // const fetchData = async () => {
+    //   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const responce = await axios.get(`https://huawei-heroes-081-1.onrender.com/data`);
+        console.log(responce.data);
+        const responced = await axios.post(`https://huawei-heroes-081-1.onrender.com/data`, dad);
+        console.log(responced);
+        // console.log("dsghkgdfkjg");
+      } catch (err) {
+        console.log("Error accur:", err);
+      }
+    }
+    fetchData();
+  }, []);
+
 
   return (
     <div className="signup-container">
@@ -119,6 +144,11 @@ const SignupForm = () => {
 export default SignupForm;
 
 
+
+
+
+
+
 // import axios from 'axios';
 // import React, { useContext, useEffect, useState } from 'react';
 // import { auth } from './firebase';
@@ -144,8 +174,6 @@ export default SignupForm;
 //     console.log(formData);
 //   };
 
-//   // https://huawei-heroes-081-1.onrender.com/data?email=babakhalil@gmail.com
-//   // const responce = await axios.post(`https://huawei-heroes-081-1.onrender.com/data?email=${formData.email}`,formData);
 //   const handleSubmit = async (event) => {
 //     event.preventDefault();
 //     setMessage('Sign up successful! A verification email has been sent. Please verify your email.');

@@ -14,7 +14,7 @@ const EditCard = () => {
 
   const fetchCardData = async () => {
     try {
-      const response = await axios.get(`https://huawei-heroes-081-1.onrender.com/Cards/${id}`);
+      const response = await axios.get(`https://huawei-heroes-081-2.onrender.com/Cards/${id}`);
       setFormData(response.data);
     } catch (error) {
       console.error('Error fetching card data:', error);
@@ -32,7 +32,7 @@ const EditCard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://huawei-heroes-081-1.onrender.com/Cards/${id}`, formData);
+      await axios.put(`https://huawei-heroes-081-2.onrender.com/Cards/${id}`, formData);
       navigate('/admin');
     } catch (error) {
       console.error('Error updating card:', error);
