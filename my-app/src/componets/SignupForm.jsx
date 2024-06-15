@@ -1,46 +1,4 @@
 
-// import React, { useContext, useEffect, useState } from 'react';
-// import './signup.css';
-// import { Link } from 'react-router-dom';
-// import axios from 'axios';
-// //gfhd
-
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-
-// // import { initializeApp } from "firebase/app";
-// import { getDatabase } from "firebase/database";
-// import { getAuth, createUserWithEmailAndPassword,sendEmailVerification } from "firebase/auth";
-
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // import React, {useState} from 'react';
-// import { NavLink, useNavigate } from 'react-router-dom';
-// import {  createUserWithEmailAndPassword  } from 'firebase/auth';
-// // import { auth } from '../firebase';
- 
-
-// const SignupForm = () => {
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDdiwJZ-jK2Ju1YjeWKxDIoofO8BHhVllY",
-//   authDomain: "huawei-heroes081.firebaseapp.com",
-//   databaseURL: "https://huawei-heroes081-default-rtdb.firebaseio.com",
-//   projectId: "huawei-heroes081",
-//   storageBucket: "huawei-heroes081.appspot.com",
-//   messagingSenderId: "457276554402",
-//   appId: "1:457276554402:web:84df22529b2efe96702bfb"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// // const database=getDatabase(app);
-// const auth=getAuth();
-
-
-
 //   const [formData, setFormData] = useState({
 //     username: '',
 //     email: '',
@@ -54,10 +12,10 @@
 //   const navigate = useNavigate();
 //     const [email, setEmail] = useState('')
 //     const [password, setPassword] = useState('');
- 
+
 //     const onSubmit = async (e) => {
 //       e.preventDefault()
-     
+
 //       await createUserWithEmailAndPassword(auth, email, password)
 //         .then((userCredential) => {
 //             // Signed in
@@ -72,8 +30,8 @@
 //             console.log(errorCode, errorMessage);
 //             // ..
 //         });
- 
-   
+
+
 //     }
 
 
@@ -184,50 +142,27 @@
 
 // export default SignupForm;
 
+// src/components/SignupForm.js
 
 
-
-
-
-
-
-
-
-
-
-
-import React, { useState } from 'react';
+// import React, { useContext, useEffect, useState } from 'react';
+// import './signup.css';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { auth } from './firebase';
 import './signup.css';
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
-import { initializeApp } from 'firebase/app';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDdiwJZ-jK2Ju1YjeWKxDIoofO8BHhVllY",
-  authDomain: "huawei-heroes081.firebaseapp.com",
-  databaseURL: "https://huawei-heroes081-default-rtdb.firebaseio.com",
-  projectId: "huawei-heroes081",
-  storageBucket: "huawei-heroes081.appspot.com",
-  messagingSenderId: "457276554402",
-  appId: "1:457276554402:web:84df22529b2efe96702bfb"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { Authcontext } from '../context/loginauth';
 
 const SignupForm = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    fruit: ''
-  });
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
-
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  const [verificationMessage, setVerificationMessage] = useState('');
+  const [message, setMessage] = useState('');
+  const { qshow, setQshow, formData, setFormData, data, setData } = useContext(Authcontext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -235,45 +170,99 @@ const SignupForm = () => {
       ...formData,
       [name]: value
     });
+    console.log(formData);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // https://huawei-heroes-081-1.onrender.com/data?email=babakhalil@gmail.com
+  // const responce = await axios.post(`https://huawei-heroes-081-1.onrender.com/data?email=${formData.email}`,formData);
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
 
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setMessage('Sign up successful! A verification email has been sent. Please verify your email.');
+    setVerificationMessage('');
+    setQshow(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
+
       await sendEmailVerification(user);
-      setMessage('Verification email sent. Please check your inbox.');
-      setError('');
+
     } catch (error) {
-      setError('Error creating account: ' + error.message);
-      setMessage('');
+      setMessage('Error signing up: ' + error.message);
+    }
+
+    console.log('Form submitted:', formData);
+
+    const fetchData = async () => {
+      try {
+        const responce = await axios.post(`https://huawei-heroes-081-1.onrender.com/data`, formData);
+        console.log(responce.data);
+      } catch (err) {
+        console.log("Error accur:", err);
+      }
+    }
+    fetchData();
+  };
+
+  // const dad = [{
+  //   "id": 2,
+  //   "name": "Test",
+  //   "passWord": "123",
+  //   "email": "asda",
+  //   "cart": []
+  // }]
+
+  // useEffect(() => {
+  //   // const fetchData = async () => {
+  //   //   useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const responce = await axios.get(`https://huawei-heroes-081-1.onrender.com/data`);
+  //       console.log(responce.data);
+  //       const responced = await axios.post(`https://huawei-heroes-081-1.onrender.com/data`, dad);
+  //       console.log(responced);
+  //       // console.log("dsghkgdfkjg");
+  //     } catch (err) {
+  //       console.log("Error accur:", err);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
+
+  const checkVerificationStatus = async (e) => {
+    e.preventDefault();
+    const user = auth.currentUser;
+    await user.reload();
+    if (user.emailVerified) {
+
+      setVerificationMessage('Email verified successfully!');
+      
+      navigate('./Nav');
+    } else {
+      setVerificationMessage('Email not verified yet. Please check your email and Verify.');
+
     }
   };
 
+
   return (
     <div className="signup-container">
+      <h2>Sign Up</h2>
       <form className="signup-form" onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="email">Name</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
+            id="name"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             required
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
@@ -284,7 +273,7 @@ const SignupForm = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
@@ -294,30 +283,87 @@ const SignupForm = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className='questions'>
-          <h6>When you forget your password, you can login by answering this question:</h6>
-          <label htmlFor="q1">Q1: Enter your favorite fruit along with your friend's name:</label>
-          <input type="text" id='q1' name='fruit' onChange={handleChange} required value={formData.fruit}/>
-        </div>
-        <br/>
-        <button type="submit">Sign Up</button>
-        {message && <p className="message">{message}</p>}
-        {error && <p className="error">{error}</p>}
-        <p>Already have an account? <Link to="/loginForm">Login</Link></p>
+        <button type="submit" >Sign Up</button>
       </form>
+      {message && <p>{message}</p>}
+      {qshow && <form onSubmit={checkVerificationStatus}>
+        <div className='questions'>
+          <h6>when you forgot password you can login by answering this Questions</h6>
+          <label htmlFor="q1">Q1: Enter your Favorite Fruit along with your Friend Name : </label>
+          <input type="text" id='q1' name='fruit' onChange={handleChange} required value={formData.fruit} />
+        </div>
+        <br />
+        <button type='submit' >Login</button>
+
+      </form>
+      }
+      {verificationMessage && <p>{verificationMessage}</p>}
+      <p>Already have an account? <Link to="/LoginForm">Login</Link></p>
     </div>
   );
 };
 
 export default SignupForm;
+
+
+
+
+// // src/components/SignupForm.js
+// import React, { useState } from 'react';
+// import { auth } from './firebase';
+// import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+
+// const SignupForm = () => {
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [message, setMessage] = useState('');
+
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     setMessage('');
+
+//     try {
+//       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+//       const user = userCredential.user;
+
+//       await sendEmailVerification(user);
+
+//       setMessage('Sign up successful! A verification email has been sent.');
+//     } catch (error) {
+//       setMessage('Error signing up: ' + error.message);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>Sign Up</h2>
+//       <form onSubmit={handleSubmit}>
+//         <div>
+//           <label htmlFor="email">Email:</label>
+//           <input
+//             type="email"
+//             id="email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             required
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="password">Password:</label>
+//           <input
+//             type="password"
+//             id="password"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             required
+//           />
+//         </div>
+//         <button type="submit">Sign Up</button>
+//       </form>
+//       {message && <p>{message}</p>}
+//             <p>Already have an account? <Link to="/loginForm">Login</Link></p>
+//     </div>
+//   );
+// };
+
+// export default SignupForm;

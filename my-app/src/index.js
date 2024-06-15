@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 // import { Authcontext } from './context/loginauth';
-// import { Authprovider } from './context/loginauth.jsx';
+import { Authprovider } from './context/loginauth.jsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,9 +14,9 @@ root.render(
 
     <React.StrictMode>
       <BrowserRouter>
-      {/* <Authprovider> */}
+      <Authprovider>
         <App/>
-      {/* </Authprovider> */}
+      </Authprovider>
       </BrowserRouter>
     </React.StrictMode>
   

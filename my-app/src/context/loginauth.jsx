@@ -1,15 +1,32 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react';
 
-export const Authcontext=createContext();
+// Create the context
+export const Authcontext = createContext();
 
-export const Authprovider=({Children})=>{
-    const [data,setData]=useState([]);
-    const [userid,setUserid]=useState("");
-    const [password,setPassword]=useState("");
+// Create the provider component
+export const Authprovider = ({ children }) => {
+    
+  // const dad = [{
+  //   "id": 2,
+  //   "name": "Test",
+  //   "passWord": "123",
+  //   "email": "asda",
+  //   "cart": []
+  // }]
 
-    return(
-        <Authcontext.Provider value={{data,setData,userid,setUserid,password,setPassword}}>
-            {Children}
-        </Authcontext.Provider>
-    )
-}
+  const [qshow, setQshow] = useState(false);
+  const [formData, setFormData] = useState({
+    id:"",
+    name:"",
+    password: '',
+    email:"",
+    fruit: ''
+  });
+  const [data, setData] = useState([]);
+
+  return (
+    <Authcontext.Provider value={{ qshow, setQshow, formData, setFormData, data, setData }}>
+      {children}
+    </Authcontext.Provider>
+  );
+};
