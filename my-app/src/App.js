@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductGrid from './components/ProductGrid';
@@ -12,9 +13,20 @@ import Image3 from './components/Image3';
 import Footer from './components/Footer';
 import Footer1 from './components/Footer1';
 
+import { useState } from 'react'
+
+import React from "react";
+import { RefillStation } from "./RefillStation";
+import { Sets } from "./Sets";
+import Aboutpage from "./Aboutpage";
+import './App.css'
+import CardContainer from './ft32_181_components/CardContainer'
+
 
 
 const App = () => {
+  
+  const [count, setCount] = useState(0)
   return (
       <div>
       
@@ -40,8 +52,19 @@ const App = () => {
       </Routes>
     </Router>
       </div>
+
+
+    <>
+    <div>
+      <CardContainer/>
+    </div>
+    <div style={{ display: "flex" }}>
+        {/* <Aboutpage /> */}
+        {/* <RefillStation /> */}
+        <Sets />
+      </div>
+    </>
     
   );
 };
-
-export default App;
+export default App
