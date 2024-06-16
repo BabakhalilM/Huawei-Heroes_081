@@ -7,6 +7,7 @@ const Card = ({ data }) => {
 
   return (
     <div
+    
       className="card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
