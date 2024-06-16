@@ -1,0 +1,29 @@
+/* src/components/Card.css */
+
+
+.card {
+    /* border: 1px solid #ccc; */
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    transition: transform 0.3s;
+    color:black;
+    background-color: white;
+    
+  }
+ 
+  /* .card:hover {
+    transform: scale(1);
+  }
+   */
+  .card-image img {
+    width: 100%;
+    border-radius: 8px;
+    transition: opacity 0.3s;
+  }
+  .card-image img:hover {
+    transform: scale(1);
+  }
+  
