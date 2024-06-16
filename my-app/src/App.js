@@ -22,7 +22,7 @@ function App() {
   return (
     // <Authprovider>
     <div>
-      <h1>Hello</h1>
+      {/* <h1>Hello</h1> */}
       <div>
         {/* <Nav /> */}
         <Routes>
@@ -38,7 +38,7 @@ function App() {
           <Route path="/edit-card/:id" element={<EditCard />} /> */}
         </Routes>
         {/* <Cardshow /> */}
-        <ItemList/>
+        {/* <ItemList/> */}
       </div>
     </div>
     // </Authprovider>

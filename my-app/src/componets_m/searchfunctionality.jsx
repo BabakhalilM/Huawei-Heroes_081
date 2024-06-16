@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './admin.css';
-
+import './search.css';
 const ItemList = () => {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState('');
@@ -25,16 +25,21 @@ const ItemList = () => {
 
   return (
     <div>
-    <div>
-    <input 
-      type="text"
-      placeholder="Search by name..."
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-    />
-  </div>
+      <div class="search-container">
+      <div class="search-input-wrapper">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search by name..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+
+        />
+      </div>
+      </div>
+
       <div className="card-list">
-      {filteredItems.map(card => (
+        {filteredItems.map(card => (
           <div className="card-item" key={card.id}>
             <img src={card.image} alt={card.name} />
             <div className="card-details">
