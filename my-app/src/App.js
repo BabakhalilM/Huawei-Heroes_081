@@ -21,6 +21,7 @@ import Aboutpage from "./Pages/Aboutpage";
 import { RefillStation } from "./Pages/RefillStation";
 import { Sets } from "./Pages/Sets";
 import { Shop } from "./Pages/Shop";
+import Adminpannel from "./AdminPaanel/Adminpannel";
 
 import { RefillStation } from "./RefillStation";
 import { Sets } from "./Sets";
@@ -77,9 +78,10 @@ const App = () => {
     </div>
     <div style={{ display: "flex" }}>
         {/* <Aboutpage /> */}
-        {/* <RefillStation /> */}
+        <RefillStation />
         {/* <Sets /> */}
-        <Shop/>
+        {/* <Shop/> */}
+        {/* <Adminpannel/> */}
       </div>
     </>
     <div>
