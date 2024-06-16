@@ -1,16 +1,30 @@
+
+import { useState } from 'react'
+
 import React from "react";
 import { RefillStation } from "./RefillStation";
 import { Sets } from "./Sets";
 import Aboutpage from "./Aboutpage";
+import './App.css'
+import CardContainer from './ft32_181_components/CardContainer'
 
-export const App = () => {
+
+
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
     <>
-      <div style={{ display: "flex" }}>
+    <div>
+      <CardContainer/>
+    </div>
+    <div style={{ display: "flex" }}>
         {/* <Aboutpage /> */}
         {/* <RefillStation /> */}
         <Sets />
       </div>
     </>
-  );
-};
+  )
+}
+
+export default App
