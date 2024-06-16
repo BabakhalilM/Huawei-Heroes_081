@@ -33,7 +33,7 @@ const Card = ({ image, image2, title, rating, price, buttonText }) => {
       </div>
     );
   };
-export const TravelSets = () => {
+export const TravelSets= () => {
     const products = [
         {
           "image": "https://haanready.com/cdn/shop/products/062_736773a1-2164-4170-9ef2-925154e35d00.jpg?v=1651509382&width=533",

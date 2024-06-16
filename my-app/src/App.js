@@ -16,6 +16,12 @@ import Footer1 from './components/Footer1';
 import { useState } from 'react'
 
 import React from "react";
+
+import Aboutpage from "./Pages/Aboutpage";
+import { RefillStation } from "./Pages/RefillStation";
+import { Sets } from "./Pages/Sets";
+import { Shop } from "./Pages/Shop";
+
 import { RefillStation } from "./RefillStation";
 import { Sets } from "./Sets";
 import Aboutpage from "./Aboutpage";
@@ -40,6 +46,7 @@ import ItemList from './componets_m/searchfunctionality';
 import QRCode from 'qrcode.react';
 
 const App = () => {
+
 
   const [count, setCount] = useState(0)
   return (
@@ -71,7 +78,8 @@ const App = () => {
     <div style={{ display: "flex" }}>
         {/* <Aboutpage /> */}
         {/* <RefillStation /> */}
-        <Sets />
+        {/* <Sets /> */}
+        <Shop/>
       </div>
     </>
     <div>

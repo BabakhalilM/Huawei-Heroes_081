@@ -1,28 +1,26 @@
 .dropdown {
     position: relative;
     width: 150px;
-  }
-  
-  
-  .dropdown-header {
+}
+
+.dropdown-header {
     padding: 10px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  
-  .arrow {
+}
+
+.arrow {
     margin-left: 10px;
     transition: transform 0.3s;
-  }
-  
-  .arrow.open {
+}
+
+.arrow.open {
     transform: rotate(180deg);
-  }
-  
-  .dropdown-list {
+}
+
+.dropdown-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -32,21 +30,67 @@
     position: absolute;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dropdown-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-section {
+    padding: 10px;
+}
+
+.dropdown-item {
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .dropdown-item:hover {
+}
+
+.dropdown-item:hover {
     background-color: #f1f1f1;
     text-decoration: underline;
-  }
-  
-  .dropdown-item a {
+}
+
+.dropdown-item a {
     text-decoration: none;
     color: inherit;
     display: block;
-  }
-  
+}
+
+/* Optional: For flex ro/* Remove default list styling and set display as flex */
+.dropdown-section {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.dropdown-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+w styling within sections */
+.dropdown-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-section li {
+    box-sizing: border-box;
+    padding: 5px;
+}
+

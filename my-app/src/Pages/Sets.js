@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Dropdown3 from './ft30_067_Day3_componants/Dropdown3';
-import { TravelSets } from './ft30_067_Day3_componants/TravelSets';
-import { GiftSets } from './ft30_067_Day3_componants/GiftSets';
+import { TravelSets } from '../ft30_067_Day3_componants/TravelSets';
+import { GiftSets } from '../ft30_067_Day3_componants/GiftSets';
+import Dropdown3 from '../ft30_067_Day3_componants/Dropdown3';
 
 export const Sets = () => {
     return (

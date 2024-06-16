@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OurStory = () => {
+const OurStory= () => {
     return (
         <div>
             <div className="first" >
