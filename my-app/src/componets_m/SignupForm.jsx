@@ -10,7 +10,7 @@ const SignupForm = () => {
   const navigate = useNavigate();
   const [verificationMessage, setVerificationMessage] = useState('');
   const [message, setMessage] = useState('');
-  const { formData, setFormData } = useContext(Authcontext);
+  const { formData, setFormData,setUseremail } = useContext(Authcontext);
   const [userCreated, setUserCreated] = useState(false);
 
   const handleChange = (e) => {
@@ -52,7 +52,7 @@ const SignupForm = () => {
       setVerificationMessage('Email verified successfully!');
       
       const newUserData = {
-        "id_": generateUniqueId(),
+        "id": generateUniqueId(),
         "name": formData.name,
         "email": formData.email,
         "passWord": formData.password,
@@ -62,10 +62,18 @@ const SignupForm = () => {
       console.log("new userdata ",newUserData);
       console.log(formData);
       try {
-        const response = await axios.post('https://huawei-heroes-081-2.onrender.com/data', formData);
+        const response = await axios.post('https://huawei-heroes-081-5.onrender.com/data', formData);
         console.log(response.data);
         console.log("data posted succesfully");
         setMessage('Sign up successful! A verification email has been sent. Please verify your email.');
+        setUseremail(formData.email);
+        setFormData({
+          name: "",
+          password: "",
+          email: "",
+          fruit: "",
+          cart: []
+        });
         navigate('/Nav'); 
       } catch (err) {
         console.log("Error occurred:", err);
@@ -76,29 +84,29 @@ const SignupForm = () => {
     }
   };
   
-  const dad = [{
-    "id": 2,
-    "name": "Test",
-    "passWord": "123",
-    "email": "asda",
-    "cart": []
-  }]
-    useEffect(() => {
-    // const fetchData = async () => {
-    //   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const responce = await axios.get(`https://huawei-heroes-081-1.onrender.com/data`);
-        console.log(responce.data);
-        const responced = await axios.post(`https://huawei-heroes-081-1.onrender.com/data`, dad);
-        console.log(responced);
-        // console.log("dsghkgdfkjg");
-      } catch (err) {
-        console.log("Error accur:", err);
-      }
-    }
-    fetchData();
-  }, []);
+  // const dad = [{
+  //   "id": 2,
+  //   "name": "Test",
+  //   "passWord": "123",
+  //   "email": "asda",
+  //   "cart": []
+  // }]
+  //   useEffect(() => {
+  //   // const fetchData = async () => {
+  //   //   useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const responce = await axios.get(`https://huawei-heroes-081-5.onrender.com/data`);
+  //       console.log(responce.data);
+  //       const responced = await axios.post(`https://huawei-heroes-081-5.onrender.com/data`, dad);
+  //       console.log(responced);
+  //       // console.log("dsghkgdfkjg");
+  //     } catch (err) {
+  //       console.log("Error accur:", err);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
 
 
   return (

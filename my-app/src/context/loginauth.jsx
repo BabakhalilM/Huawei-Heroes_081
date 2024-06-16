@@ -1,19 +1,10 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 // Create the context
 export const Authcontext = createContext();
 
 // Create the provider component
 export const Authprovider = ({ children }) => {
-    
-  // const dad = [{
-  //   "id": 2,
-  //   "name": "Test",
-  //   "passWord": "123",
-  //   "email": "asda",
-  //   "cart": []
-  // }]
-
   const [qshow, setQshow] = useState(false);
   const [formData, setFormData] = useState({
     name:"",
@@ -22,6 +13,8 @@ export const Authprovider = ({ children }) => {
     fruit: '',
     cart:[]
   });
+  const [useremail,setUseremail]=useState("");
+
   const [data, setData] = useState([]);
 
 const addToCart = async (userEmail, productId) => {
@@ -74,7 +67,7 @@ const deleteFromCart = async (userEmail, productId) => {
 
 
   return (
-    <Authcontext.Provider value={{ qshow, setQshow, formData, setFormData, data, setData, addToCart, deleteFromCart  }}>
+    <Authcontext.Provider value={{ setUseremail, qshow,useremail, setQshow, formData, setFormData, data, setData, addToCart, deleteFromCart  }}>
       {children}
     </Authcontext.Provider>
   );

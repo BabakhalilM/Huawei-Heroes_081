@@ -1,14 +1,15 @@
 
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import axios from 'axios';
 import { Authcontext } from '../context/loginauth';
 
 const LoginForm = () => {
-  const { formData, setFormData, setData,data } = useContext(Authcontext);
+  const { formData, setFormData, setData,data,setUseremail,useremail } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
   const [userpresent, setUserpresent] = useState(false);
+  const navigate=useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,39 +18,52 @@ const LoginForm = () => {
       [name]: value
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-
+  
     setLoading(true);
     try {
-      const response = await axios.get('https://huawei-heroes-081-2.onrender.com/data');
+      const response = await axios.get(`https://huawei-heroes-081-5.onrender.com/data`);
+      console.log(response.data); 
+  
       setLoading(false);
-
-      const users = response.data;
+  
+      const users = response.data; 
       console.log(users);
-
+  
       const user = users.find(
         (person) => person.email === formData.email && person.passWord === formData.password
       );
-
+  
       if (user) {
         setUserpresent(true);
-        setData(user.cart); 
-        console.log('User found:', formData);
-        console.log(data);
+        setUseremail(formData.email); 
+        setData(user.cart);
+        console.log('User found:', user); 
+        console.log('Data of cart', user.cart); 
+        setFormData({
+          name: "",
+          password: "",
+          email: "",
+          fruit: "",
+          cart: []
+        });
+        navigate('/Nav'); 
+  
       } else {
         setUserpresent(false);
-        alert("You don't have an account. Please sign up first.");
+        alert("Incorrect email or password. Please try again.");
       }
     } catch (err) {
       setLoading(false);
-      console.log('Error on fetching', err);
+      console.log('Error fetching data:', err);
+      alert('Error fetching data. Please try again.');
     }
   };
+  
 
-  return (
+    return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>

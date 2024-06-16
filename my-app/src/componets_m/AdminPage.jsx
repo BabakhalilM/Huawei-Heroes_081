@@ -18,7 +18,7 @@ const AdminPage = () => {
 
   const fetchCards = async () => {
     try {
-      const response = await axios.get('https://huawei-heroes-081-2.onrender.com/Cards');
+      const response = await axios.get('https://huawei-heroes-081-5.onrender.com/Cards');
       setCards(response.data);
       console.log(response.data);
       setLoading(false);
@@ -31,7 +31,7 @@ const AdminPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://huawei-heroes-081-2.onrender.com/Cards/${id}`);
+      await axios.delete(`https://huawei-heroes-081-5.onrender.com/Cards/${id}`);
       setCards(cards.filter(card => card.id !== id));
     } catch (error) {
       console.error('Error deleting card:', error);

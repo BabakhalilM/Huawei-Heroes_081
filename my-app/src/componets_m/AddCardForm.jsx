@@ -1,4 +1,4 @@
-// AddCardForm.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import './admin.css';
@@ -34,7 +34,7 @@ const AddCardForm = () => {
     e.preventDefault();
     const newCard = { ...formData, id_: Date.now().toString() };
     try {
-      await axios.post('https://huawei-heroes-081-2.onrender.com/Cards', newCard);
+      await axios.post('https://huawei-heroes-081-5.onrender.com/Cards', newCard);
       navigate('/admin');
     } catch (error) {
       console.error('Error adding card:', error);

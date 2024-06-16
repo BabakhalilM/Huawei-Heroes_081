@@ -14,7 +14,7 @@ const EditCard = () => {
 
   const fetchCardData = async () => {
     try {
-      const response = await axios.get(`https://huawei-heroes-081-2.onrender.com/Cards/${id}`);
+      const response = await axios.get(`https://huawei-heroes-081-5.onrender.com/Cards/${id}`);
       setFormData(response.data);
     } catch (error) {
       console.error('Error fetching card data:', error);
@@ -32,7 +32,7 @@ const EditCard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://huawei-heroes-081-2.onrender.com/Cards/${id}`, formData);
+      await axios.put(`https://huawei-heroes-081-5.onrender.com/Cards/${id}`, formData);
       navigate('/admin');
     } catch (error) {
       console.error('Error updating card:', error);
@@ -43,7 +43,7 @@ const EditCard = () => {
     <form onSubmit={handleSubmit}>
       <h2>Edit Card</h2>
       <input type="text" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" required />
-      {/* Add other fields similarly */}
+      
       <button type="submit">Update Card</button>
     </form>
   );
