@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import QRCode from 'qrcode.react';
 import { amountcontext } from '../userpanel/Cartshow';
 import './qrcode.css';
-// import './signup.css';
 
 const BuyNow = () => {
   const { payAmount } = useContext(amountcontext);
