@@ -17,20 +17,16 @@ export const Authprovider = ({ children }) => {
 
   const [data, setData] = useState([]);
 
-  // Inside your Authprovider component or context file (loginauth.jsx)
   const addToCart = async (userEmail, productId) => {
     try {
-      // Fetch user data based on userEmail
       const response = await axios.get(`https://huawei-heroes-081-5.onrender.com/data?email=${(userEmail)}`);
   
-      // Check if user exists
       if (response.data.length === 0) {
         throw new Error('User not found');
       }
   
       const user = response.data[0];
   
-      // Fetch product data based on productId
       const productResponse = await axios.get(`https://huawei-heroes-081-5.onrender.com/Cards/${productId}`);
   
       // Check if product exists

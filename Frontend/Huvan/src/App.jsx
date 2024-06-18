@@ -1,7 +1,4 @@
-import { useState } from 'react'
-// import './App.css'
 import Navbar from './Components/components/Navbar'
-// import { Image } from '@chakra-ui/react'
 import Image from './Components/components/Image';
 import Image1 from './Components/components/Image1';
 import ProductGrid from './Components/components/ProductGrid';
@@ -10,7 +7,7 @@ import Refil from './Components/components/Refil';
 import Refil2 from './Components/components/Refil2';
 import Footer from './Components/components/Footer';
 import Footer1 from './Components/components/Footer1';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 import Image3 from './Components/components/Image3';
 import Detail from './Components/components/Detail';
 import LoginForm from './Components/componets_m/LoginForm';
@@ -20,7 +17,6 @@ import ForgotPassword from './Components/componets_m/ForgotPassword';
 import QRCode from './Components/componets_m/Qrcode';
 import CardContainer from './Components/ft32_181_components/CardContainer';
 import Aboutpage from './Components/Pages/Aboutpage';
-import Dropdown from './Components/ft30_067_componants/Dropdown';
 import OurStory from './Components/ft30_067_componants/OurStory';
 import Sobremesatalks from './Components/ft30_067_componants/Sobremesatalks';
 import WaterProjects from './Components/ft30_067_componants/WaterProjects';
@@ -46,45 +42,12 @@ import { TravelSets } from './Components/ft30_067_Day3_componants/TravelSets';
 import { GiftSets } from './Components/ft30_067_Day3_componants/GiftSets';
 import ProductListing from './Components/componentsft30_312/ProductListing';
 import Adminpannel from './Components/AdminPaanel/Adminpannel';
+import './App.css';
 
 function App() {
 
   return (
-    <>
-
-      {/* <> */}
-
-
-      {/* <Navbar /> */}
-      {/* <Router>
-        <Route path='/' element={{< Image />
-          <ProductGrid />
-          <Image1 />
-          <ProductGrid1 />
-          <Refil />
-          <Refil2 />
-          <Footer />
-          <Footer1 />}}/>
-      </Router> */}
-
-      {/* <Router> */}
-      {/* <Aboutpage/> */}
-      {/* <Routes>
-      <Route path="/" element={<><Image /><ProductGrid /><Image1/><ProductGrid1/><Refil/><Refil2/><Footer/><Footer1/></>}/>
-        <Route path="/Detail/:productId" element={<Detail />} /> */}
-      {/* <Route path="/" element={<Refil2 />} /> */}
-      {/* <Route path="/image3" element={<Image3 />} /> */}
-      {/* <Route path='/' element={<Nav />} /> */}
-      {/* <Route path='/Nav' element={<Nav />} /> */}
-      {/* <Route path="/signupForm" element={<SignupForm />} />
-              <Route path="/LoginForm" element={<LoginForm />} />
-              <Route path='/Cartshow' element={<Cartshow />} />
-              <Route path='/CardContainer' element={<CardContainer/>}/>
-              <Route path='/cartshow/Qrcode' element={<QRCode />} />
-              <Route path="/forgotPassword" element={<ForgotPassword />} /> 
-              
-      </Routes> */}
-      {/* <Router> */}
+    <div className='maindiv'>
       <Navbar />
       <Routes>
         <Route path="/" element={<><Image /><ProductGrid /><Image1 /><ProductGrid1 /><Refil /><Refil2 /></>} />
@@ -131,55 +94,7 @@ function App() {
       </Routes>
       <Footer />
       <Footer1 /> 
-
-      {/* </Router> */}
-      {/* </Router> */}
-
-
-      {/* <Routes>
-          <Route path="/Detail/:productId" element={<Detail />} />
-          <Route path="/" element={<Refil2 />} />
-          <Route path="/image3" element={<Image3 />} />
-        </Routes> */}
-
-
-
-
-      {/* <div> */}
-      {/* <CardContainer /> */}
-      {/* </div> */}
-      {/* <div style={{ display: "flex" }}> */}
-      {/* <Aboutpage /> */}
-      {/* <RefillStation /> */}
-      {/* <Sets /> */}
-      {/* <Shop/> */}
-      {/* <Adminpannel/> */}
-      {/* </div> */}
-      {/* </> */}
-      {/* <div> */}
-      {/* <div> */}
-      {/* <Nav /> */}
-      {/* <Routes>
-              <Route path='/' element={<Nav />} />
-              <Route path='/Nav' element={<Nav />} />
-              <Route path="/signupForm" element={<SignupForm />} />
-              <Route path="/LoginForm" element={<LoginForm />} />
-              <Route path='/Cartshow' element={<Cartshow />} />
-              <Route path='/cartshow/Qrcode' element={<QRCode />} />
-              <Route path="/forgotPassword" element={<ForgotPassword />} /> */}
-      {/* <Route path="/admin" element={<AdminPage />} /> */}
-      {/* <Route path="/add-card" element={<AddCardForm />} />
-         <Route path="/edit-card/:id" element={<EditCard />} /> */}
-      {/* </Routes> */}
-      {/* <Cardshow /> */}
-      {/* <ItemList/> */}
-      {/* </div> */}
-      {/* </div> */}
-
-      {/* </> */}
-
-      {/* // </> */}
-    </>
+    </div>
   )
 }
 

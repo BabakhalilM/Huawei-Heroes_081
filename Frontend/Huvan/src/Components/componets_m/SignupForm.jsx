@@ -75,7 +75,7 @@ const SignupForm = () => {
           fruit: "",
           cart: []
         });
-        navigate('/Nav'); 
+        navigate('/'); 
       } catch (err) {
         console.log("Error occurred:", err);
         setMessage('Error occurred during sign up. Please try again.');

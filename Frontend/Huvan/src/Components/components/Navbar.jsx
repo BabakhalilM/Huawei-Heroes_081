@@ -34,21 +34,23 @@ const Navbar = () => {
     }
   };
   return (
-    <nav style={{marginBottom:"10px"}}>
-      <ul
+    <nav style={{marginBottom:"10px",boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px", padding:"0px 0px 15px 0px" }}>
+      <ul 
         style={{
           display: 'flex',
           justifyContent: 'space-evenly',
           fontSize: '25px',
           listStyle: 'none',
           fontFamily: 'sans-serif',
-          alignItems: 'center'
+          alignItems: 'center',
+          margin:"0px",
+          height:"10vh",
         }}
       >
         <li><img style={{width:"150px",margin:"0px"}} src={logoImage} alt="" /></li>
         
         <li style={{ flexGrow: 1, textAlign: 'center' }}>
-          <h1 style={{fontFamily:"cursive"}} ><span style={{color:"blue"}}>Shi</span><span style={{color:"greenyellow"}}>ne </span> <span style={{color:"coral"}}>Haven</span><span ></span> </h1>
+          <h1 style={{fontFamily:"cursive",margin:"0px"}} ><span style={{color:"blue"}}>Shi</span><span style={{color:"greenyellow"}}>ne </span> <span style={{color:"coral"}}>Haven</span><span ></span> </h1>
         </li>
         {useremail === 'babakhalil@gmail.com' && (
           <li >
