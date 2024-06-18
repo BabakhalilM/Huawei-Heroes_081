@@ -34,7 +34,7 @@ const Navbar = () => {
     }
   };
   return (
-    <nav>
+    <nav style={{marginBottom:"10px"}}>
       <ul
         style={{
           display: 'flex',
@@ -51,8 +51,8 @@ const Navbar = () => {
           <h1 style={{fontFamily:"cursive"}} ><span style={{color:"blue"}}>Shi</span><span style={{color:"greenyellow"}}>ne </span> <span style={{color:"coral"}}>Haven</span><span ></span> </h1>
         </li>
         {useremail === 'babakhalil@gmail.com' && (
-          <li>
-            <Link to='/Adminpannel'>Adminpannel</Link>
+          <li >
+            <Link to='/Adminpannel'> <span style={{fontSize:"30px"}} class="material-symbols-outlined"> shield_person </span></Link>
           </li>
         )}
         {useremail && (

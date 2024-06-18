@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Skincare.css";
 import { useNavigate } from "react-router-dom";
+import { Authcontext } from "../context/loginauth";
 
 const Card = ({ image, image2, title, rating, price, buttonText }) => {
   

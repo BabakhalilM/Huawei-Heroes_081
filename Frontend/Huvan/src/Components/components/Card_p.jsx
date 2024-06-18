@@ -75,9 +75,9 @@ const Card = ({ product }) => {
   
 
   const handleAddToCart = () => {
-    console.log(useremail,data.id);
-    if (data.submit === "Add to cart") {
-      addToCart(useremail, data.id)
+    console.log(useremail,product.id);
+    if (product.submit === "Add to cart") {
+      addToCart(useremail, product.id)
         .then(() => {
           // Optionally, you can perform any UI updates or show a success message here
           console.log('Product added to cart successfully!');
