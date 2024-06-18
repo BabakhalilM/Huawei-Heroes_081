@@ -1,0 +1,100 @@
+/* yourStyles.css */
+
+.dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 220px; /* Adjust the width as needed */
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown:focus, .dropdown:hover {
+    border-color: #007bff;
+    box-shadow: 0 6px 8px rgba(0, 123, 255, 0.1);
+  }
+  
+  .dropdown option {
+    padding: 10px;
+  }
+  
+  .dropdown option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .dropdown-container option {
+    flex: 1 1 45%; /* Adjust the flex-basis value for side-by-side layout */
+    margin: 5px;
+    white-space: nowrap;
+  }
+  
+  .custom-link {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-link:hover {
+    background-color: #f0f0f0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  .custom-dropdown {
+    position: relative;
+    display: inline-block;
+    /* display: flex; */
+  }
+  
+  .custom-dropdown select {
+    /* display: flex; */
+    appearance: none;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+  }
+  
+  .custom-dropdown select:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-dropdown select option {
+    padding: 10px 20px;
+  }
+  
+  .custom-dropdown select optgroup {
+    font-weight: bold;
+  }
+  
+  .custom-dropdown select optgroup option {
+    padding-left: 20px;
+  }
+  
+  
+  

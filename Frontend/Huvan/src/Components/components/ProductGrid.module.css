@@ -1,0 +1,19 @@
+.carouselContainer {
+    width: 90%; /* Adjust as necessary */
+    margin: 0 auto;
+  }
+  
+  .carouselButton {
+    flex: 1;
+    margin: 0 10px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .carouselButton img {
+    width: 100%;
+    height: auto;
+  }
+  
