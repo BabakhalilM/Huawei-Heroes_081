@@ -1,0 +1,55 @@
+/* src/components/FilterButton.css */
+.filter-button-container {
+    position: relative;
+  }
+  
+  .filter-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-icon {
+    margin-right: 5px;
+    font-size: 1.2em;
+  }
+  
+  .filter-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .filter-options button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-options button:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-options button:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+  

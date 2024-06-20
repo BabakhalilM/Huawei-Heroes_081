@@ -1,0 +1,13 @@
+/* styles.css */
+.custom-link {
+    font-family: "Royal Acidbath";
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none; /* No underline by default */
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
