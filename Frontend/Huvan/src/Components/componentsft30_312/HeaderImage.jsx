@@ -1,7 +1,7 @@
-// src/components/HeaderImage.js
+
 import React from 'react';
 
-import './HeaderImage.css'; // Create this CSS file for styling
+import './HeaderImage.css'; 
 
 const HeaderImage = () => {
   return (

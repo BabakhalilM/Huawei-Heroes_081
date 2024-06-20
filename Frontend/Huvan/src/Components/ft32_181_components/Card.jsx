@@ -1,30 +1,4 @@
-// // src/components/Card.js
-// import React, { useState } from 'react';
-// import './Card.css';
 
-// const Card = ({ data }) => {
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   return (
-//     <div
-//       className="card"
-//       onMouseEnter={() => setIsHovered(true)}
-//       onMouseLeave={() => setIsHovered(false)}
-//     >
-//       <div className="card-image">
-//         <img src={isHovered && data['image 2'] ? data['image 2'] : data.image} alt={data['full-unstyled-link']} />
-//       </div>
-//       <h5>{data['full-unstyled-link']}</h5>
-//       <p>{data.badge}</p>
-//       <p>{data['rating-text']} {data['rating-count']}</p>
-//       <p>{data['price-item']}</p>
-//       <button>{data['quick-add__submit']}</button>
-//     </div>
-//   );
-// };
-
-// export default Card;
-// src/components/Card.js
 import React, { useContext, useState } from 'react';
 import './Card.css';
 import { useNavigate } from 'react-router-dom';
@@ -45,12 +19,11 @@ const Card = ({ data }) => {
     if (data.submit === "Add to cart") {
       addToCart(useremail, data.id)
         .then(() => {
-          // Optionally, you can perform any UI updates or show a success message here
           console.log('Product added to cart successfully!');
         })
         .catch((error) => {
           console.error('Error adding product to cart:', error);
-          // Show error message to the user
+          
           alert('Error adding product to cart. Please try again later.');
         });
     } else {

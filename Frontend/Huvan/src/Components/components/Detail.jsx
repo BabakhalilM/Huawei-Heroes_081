@@ -4,13 +4,12 @@ import { Box, Text, Spinner, Image, Button } from "@chakra-ui/react";
 import axios from "axios";
 
 const Detail = () => {
-  const { productId } = useParams(); // Get the product ID from the route parameters
+  const { productId } = useParams(); 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch product details based on the product ID
     axios.get(`https://huawei-heroes-081-5.onrender.com/Cards/${productId}`)
       .then(res => {
         setProduct(res.data);

@@ -1,7 +1,7 @@
-// src/Navbar.js
+
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link
-import './styles.css'; // Import the CSS file
+import { Link, useNavigate } from 'react-router-dom'; 
+import './styles.css'; 
 import { Authcontext } from '../context/loginauth';
 // import './navbar.css';
 import "./Navbar.module.css";

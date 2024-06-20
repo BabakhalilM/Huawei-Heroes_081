@@ -1,8 +1,7 @@
-/* src/components/HeaderImage.css */
-/* src/components/HeaderImage.css */
+
 .header-image {
     width: 100%;
-    height: 40vh; /* Adjust height as needed */
+    height: 40vh; 
     overflow: hidden;
   }
   

@@ -17,12 +17,11 @@ const Card = ({ image, image2, title, badge, rating, price, buttonText }) => {
     if (data.submit === "Add to cart") {
       addToCart(useremail, data.id)
         .then(() => {
-          // Optionally, you can perform any UI updates or show a success message here
           console.log('Product added to cart successfully!');
         })
         .catch((error) => {
           console.error('Error adding product to cart:', error);
-          // Show error message to the user
+          
           alert('Error adding product to cart. Please try again later.');
         });
     } else {

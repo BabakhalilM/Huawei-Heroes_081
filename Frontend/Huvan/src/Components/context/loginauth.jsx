@@ -29,17 +29,14 @@ export const Authprovider = ({ children }) => {
   
       const productResponse = await axios.get(`https://huawei-heroes-081-5.onrender.com/Cards/${productId}`);
   
-      // Check if product exists
       const product = productResponse.data;
       if (!product) {
         throw new Error('Product not found');
       }
   
-      // Update user's cart with the new product
       const updatedCart = user.cart ? [...user.cart, product] : [product];
       const updatedUser = { ...user, cart: updatedCart };
   
-      // Update user data on the server
       await axios.put(`https://huawei-heroes-081-5.onrender.com/data/${user.id}`, updatedUser);
   
       alert('Product added to cart successfully!');

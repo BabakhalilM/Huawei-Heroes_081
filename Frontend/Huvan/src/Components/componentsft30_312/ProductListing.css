@@ -1,83 +1,4 @@
-/* src/components/ProductListing.css
 
-.product-listing {
- display: grid;
- grid-template-columns: repeat(4,1fr);
-  justify-content: space-around;
-  gap: 20px;
-  padding: 20px;
-}
-
-.product-card {
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-}
-
-.product-card button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.product-card button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-
-.product-listing {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-
-
-
-
-
-
-.pagination {
-  display: flex;
-  justify-content: center;
-}
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  margin: 0 5px;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.pagination button.active {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.pagination button:disabled {
-  cursor: not-allowed;
-  color: #ccc;
-}
- */
-
- /* Styles for the product listing */
 .product-listing {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -129,7 +50,6 @@
   color: #fff;
 }
 
-/* Styles for pagination */
 .pagination {
   display: flex;
   justify-content: center;

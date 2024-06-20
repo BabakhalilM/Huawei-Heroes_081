@@ -63,7 +63,7 @@ const ForgotPassword = () => {
         await axios.put(`https://huawei-heroes-081-5.onrender.com/data/${user.id}`, updatedUser);
         setLoading(false);
         alert('Password updated successfully!');
-        navigate('/');  // Replace with your main page route
+        navigate('/');  
       }
     } catch (err) {
       setLoading(false);
