@@ -7,18 +7,19 @@ const Card = ({ data }) => {
 
   return (
     <div
+    
       className="card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="card-image">
-        <img src={isHovered && data['image 2'] ? data['image 2'] : data.image} alt={data['full-unstyled-link']} />
+        <img src={isHovered && data['image'] ? data['image 2']||data['image'] : data.image} alt={data['name']} />
       </div>
-      <h5>{data['full-unstyled-link']}</h5>
-      <p>{data.badge}</p>
-      <p>{data['rating-text']} {data['rating-count']}</p>
-      <p>{data['price-item']}</p>
-      <button>{data['quick-add__submit']}</button>
+      <h5>{data['name']}</h5>
+      <p>{data.badge || "Pack Price"}</p>
+      <p>{data['rating'] || "N/A"}★ {data['ratingcount']}</p>
+      <p>{data['price']}€</p>
+      <button>{data.submit || "Sold Out"}</button>
     </div>
   );
 };
