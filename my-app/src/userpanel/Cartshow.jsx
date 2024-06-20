@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import "./userpanel.css";
+// import "./userpanel.css";
 import { Authcontext } from '../context/loginauth';
 import { Children, createContext, useContext, useEffect, useState } from 'react';
 import { Box, Center, Flex, Text } from '@chakra-ui/react';
